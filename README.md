@@ -13,3 +13,9 @@ sudo docker run -dti -p 80:8000 abc  #80 is host port, 8000 is container port.
 
 # On Mac
 * Log: https://docs.docker.com/docker-for-mac/troubleshoot/#check-the-logs
+
+# Oralce
+* Check instance name:
+```sql
+SELECT sys_context('USERENV','DB_NAME') AS Instance FROM dual;
+```
