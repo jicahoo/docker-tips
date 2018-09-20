@@ -5,7 +5,8 @@ docker build -t imag_name .
 docker run -i -t imag_name  /bin/bash
 docker run -dit  python    # Docker will exit when main process ends. https://stackoverflow.com/questions/28212380/why-docker-container-exits-immediately
 docker exec -ti container_name /bin/bash
-sudo docker run -dti -p 80:8000 abc  #80 is host port, 8000 is container port.
+sudo docker run -dti -p 80:8000 abc  #80 is host port, 8000 is container port
+docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 ```
 
 # docker
