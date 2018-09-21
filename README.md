@@ -20,3 +20,6 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 ```sql
 SELECT sys_context('USERENV','DB_NAME') AS Instance FROM dual;
 ```
+
+# docker network
+* By default, the docker containers are connected to the same switch. You can check the ip address use command like 'ifconifg' or 'ip addr' and ping each other. The local IP address is with prefix 172.
