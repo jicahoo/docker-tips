@@ -11,6 +11,7 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 
 # docker
 * https://hub.docker.com/r/wnameless/oracle-xe-11g/   (16.04)
+* docker pull sflyr/sqlplus
 
 # On Mac
 * Log: https://docs.docker.com/docker-for-mac/troubleshoot/#check-the-logs
@@ -19,4 +20,9 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 * Check instance name:
 ```sql
 SELECT sys_context('USERENV','DB_NAME') AS Instance FROM dual;
+
 ```
+* SQLPlus: `/sqlplus system/oracle@172.17.02:1521/XE
+
+# docker network
+* By default, the docker containers are connected to the same switch. You can check the ip address use command like 'ifconifg' or 'ip addr' and ping each other. The local IP address is with prefix 172.
