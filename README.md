@@ -1,3 +1,6 @@
+# tips
+* use mysql 5.7
+
 # docker-tips
 
 ```
