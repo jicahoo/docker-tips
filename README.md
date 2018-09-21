@@ -11,6 +11,7 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 
 # docker
 * https://hub.docker.com/r/wnameless/oracle-xe-11g/   (16.04)
+* docker pull sflyr/sqlplus
 
 # On Mac
 * Log: https://docs.docker.com/docker-for-mac/troubleshoot/#check-the-logs
