@@ -24,6 +24,7 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 ```sql
 SELECT sys_context('USERENV','DB_NAME') AS Instance FROM dual;
 select sys_context( 'userenv', 'current_schema' ) from dual;
+describe employee_history;
 ```
 * SQLPlus: `/sqlplus system/oracle@172.17.02:1521/XE
 
