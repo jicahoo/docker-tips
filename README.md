@@ -30,3 +30,9 @@ describe employee_history;
 
 # docker network
 * By default, the docker containers are connected to the same switch. You can check the ip address use command like 'ifconifg' or 'ip addr' and ping each other. The local IP address is with prefix 172.
+
+# Docker process mapping
+
+# Docker storage mapping
+
+# Docker CPU/Memory/Storage resource isolation
