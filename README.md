@@ -59,9 +59,6 @@ start-docker.sh(1190)---dockerd(1301)---docker-containe(1351)---docker-containe+
 linuxkit-025000000001:~# pstree -p 1351
 docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 ```
-```
-
-```
 
 # Docker storage mapping
 
