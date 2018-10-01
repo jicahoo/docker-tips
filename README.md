@@ -18,6 +18,8 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 
 # On Mac
 * Log: https://docs.docker.com/docker-for-mac/troubleshoot/#check-the-logs
+* Login to VM in Hyperkit: https://stackoverflow.com/questions/39739560/how-to-access-the-vm-created-by-dockers-hyperki
+* `screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty` Then you can see the docker daemon
 
 # Oralce
 * Check instance name:
