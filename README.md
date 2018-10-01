@@ -68,6 +68,7 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
   * Linux Command Tools
     * `lsns'
     * `ls -l /proc/<pid>/ns`
+    *  `cat /proc/2488/status|grep NS` . On Host, you can get the pid mapping between container pid and host pid.
 
 # Docker storage mapping
 
