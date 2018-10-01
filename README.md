@@ -67,7 +67,7 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
   * https://stackoverflow.com/questions/23513045/how-to-check-if-a-process-is-running-inside-docker-container
   * Linux Command Tools
     * `lsns'
-    * `ls -l /proc/<pid>/ns`
+    * `ls -l /proc/<pid>/ns` In both Host & container, you can check namespace info of a given process.
     *  `cat /proc/2488/status|grep NS` . On Host, you can get the pid mapping between container pid and host pid.
 
 # Docker storage mapping
