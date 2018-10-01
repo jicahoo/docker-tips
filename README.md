@@ -60,6 +60,8 @@ linuxkit-025000000001:~# pstree -p 1351
 docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 ```
 * pid namespace tools:
+  * http://hustcat.github.io/pid-namespace-and-init/
+  * https://andrestc.com/post/cgroups-io/
   * http://man7.org/linux/man-pages/man7/namespaces.7.html
   * https://stackoverflow.com/questions/23513045/how-to-check-if-a-process-is-running-inside-docker-container
   * Linux Command Tools
