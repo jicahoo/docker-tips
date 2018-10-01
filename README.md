@@ -34,6 +34,34 @@ describe employee_history;
 * By default, the docker containers are connected to the same switch. You can check the ip address use command like 'ifconifg' or 'ip addr' and ping each other. The local IP address is with prefix 172.
 
 # Docker process mapping
+* On MAC, after login LinuxKit
+* Got below processes structure. I started sleep in a container. The ouput of pstree isn't complete. I have to use serveral times to got my sleep process in my container.
+```
+linuxkit-025000000001:~# pstree -p 976
+containerd(976)-+-containerd-shim(993)---acpid(1012)
+                |-containerd-shim(1042)---diagnosticsd(1062)
+                |-containerd-shim(1096)-+-docker-init(1114)---entrypoint.sh(113+
+                |                       |-rpc.statd(1187)
+                |                       |-rpcbind(1157)
+                |                       `-transfused.sh(1210)---transfused(1212+
+                |-containerd-shim(1161)---host-timesync-d(1180)
+                |-containerd-shim(1266)---kmsg(1294)
+                |-containerd-shim(1334)---sntpc(1362)
+                |-containerd-shim(1595)---trim-after-dele(1657)
+                |-containerd-shim(1885)---vpnkit-forwarde(1947)
+                |-containerd-shim(2149)---vsudd(2181)
+                `-containerd-shim(2225)---logwrite(2243)
+linuxkit-025000000001:~# pstree -p 1114
+docker-init(1114)---entrypoint.sh(1139)-+-logwrite(1192)---lifecycle-serve(1205+
+                                        `-start-docker.sh(1190)---dockerd(1301)+
+linuxkit-025000000001:~# pstree -p 1190
+start-docker.sh(1190)---dockerd(1301)---docker-containe(1351)---docker-containe+
+linuxkit-025000000001:~# pstree -p 1351
+docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
+```
+```
+
+```
 
 # Docker storage mapping
 
