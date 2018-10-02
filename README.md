@@ -66,6 +66,9 @@ docker0		8000.0242b42c694e	no		veth68c6a5d
 							vethd28f675
 
 ```
+* Check veth pair:
+	* https://stackoverflow.com/questions/21724225/docker-how-to-get-veth-bridge-interface-pair-easily
+	* `ethtool -S <interface>`
 
 # Docker process mapping
 * On MAC, after login LinuxKit
