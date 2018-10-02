@@ -50,6 +50,8 @@ describe employee_history;
 * SQLPlus: `/sqlplus system/oracle@172.17.02:1521/XE
 
 # docker network <a name="docker-network"></a>
+* https://tonybai.com/2017/01/11/understanding-linux-network-namespace-for-docker-network/
+* https://github.com/docker/libnetwork/blob/master/docs/design.md
 * By default, the docker containers are connected to the same switch. You can check the ip address use command like 'ifconifg' or 'ip addr' and ping each other. The local IP address is with prefix 172.
 * Virtulize ethernet adapter, separate ip route mechanism, Linux Bridge.
 * https://platform9.com/blog/container-namespaces-deep-dive-container-networking/
