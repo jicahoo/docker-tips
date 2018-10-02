@@ -8,7 +8,8 @@
 
 # FAQ <a name="faq"/>
 * How to enter a Docker?
-* How to get docker pid?
+* How to get docker pid? `sudo docker inspect -f {{.State.Pid}} <docker_id>`
+* How to get detailed info of docker? `docker inspect <dokcer_id>`
 
 # tips
 * use mysql 5.7
