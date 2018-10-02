@@ -57,6 +57,16 @@ describe employee_history;
 * https://platform9.com/blog/container-namespaces-deep-dive-container-networking/
 * ![DockerNetwork](https://platform9.com/wp-content/uploads/2017/01/container_namespaces.png)
 
+## Network tools
+* Check Linux bridges:
+```shell
+jack@jack-virtual-machine:~$ brctl show
+bridge name	bridge id		STP enabled	interfaces
+docker0		8000.0242b42c694e	no		veth68c6a5d
+							vethd28f675
+
+```
+
 # Docker process mapping
 * On MAC, after login LinuxKit
 * Got below processes structure. I started sleep in a container. The ouput of pstree isn't complete. I have to use serveral times to got my sleep process in my container.
