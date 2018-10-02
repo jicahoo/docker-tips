@@ -102,3 +102,6 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 
 ## TOC of Markdown
 * https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents
+
+## Network namespace not visible
+* https://stackoverflow.com/questions/31265993/docker-networking-namespace-not-visible-in-ip-netns-list
