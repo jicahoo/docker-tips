@@ -93,7 +93,6 @@ function veth_interface_for_container() {
   rm -f "/var/run/netns/${1}"
 }
 ```
-
 	* `ethtool -S <interface>`
 
 # Docker process mapping
@@ -122,6 +121,7 @@ start-docker.sh(1190)---dockerd(1301)---docker-containe(1351)---docker-containe+
 linuxkit-025000000001:~# pstree -p 1351
 docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 ```
+
 * pid namespace tools:
   * https://lwn.net/Articles/259217/ : One of the new features in the upcoming 2.6.24 kernel will be the PID namespaces support developed by the OpenVZ team with the help of IBM.
   * http://hustcat.github.io/pid-namespace-and-init/
