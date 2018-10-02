@@ -9,7 +9,6 @@ docker run -i -t imag_name  /bin/bash
 docker run -dit  python    # Docker will exit when main process ends. https://stackoverflow.com/questions/28212380/why-docker-container-exits-immediately
 docker exec -ti container_name /bin/bash
 sudo docker run -dti -p 80:8000 abc  #80 is host port, 8000 is container port
-docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 ```
 
 # docker
@@ -17,6 +16,10 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 * docker pull sflyr/sqlplus
 # Virtualization
 * Virtualize the hardwares: CPU, RAM, Ethernet, Disk/Filesystem?
+# Install docker on Ubuntu
+* wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_18.06.1~ce~3-0~ubuntu_amd64.deb
+* sudo dpkg -i /path/to/package.deb
+* sudo docker run hello-world
 
 # On Mac
 * Log: https://docs.docker.com/docker-for-mac/troubleshoot/#check-the-logs
