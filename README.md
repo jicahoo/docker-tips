@@ -1,10 +1,6 @@
-# Table of Contents
-1. [Example](#example)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-
 # Table of contents
 1. [Docker Network](#docker-network)
+2. [Docker Storage](#docker-storage)
 2. [Some paragraph](#paragraph1)
     1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
@@ -86,7 +82,7 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
     * `ls -l /proc/<pid>/ns` In both Host & container, you can check namespace info of a given process.
     *  `cat /proc/2488/status|grep NS` . On Host, you can get the pid mapping between container pid and host pid.
 
-# Docker storage mapping
+# Docker storage <a name="docker-storage"/>
 
 # Docker CPU/Memory/Storage resource isolation
 
