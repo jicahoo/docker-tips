@@ -8,6 +8,7 @@
 
 # FAQ <a name="faq"/>
 * How to enter a Docker?
+    * `sudo nsenter --target <docker_pid> --mount --uts --ipc --net --pid`
 * How to get docker pid? `sudo docker inspect -f {{.State.Pid}} <docker_id>`
 * How to get detailed info of docker? `docker inspect <dokcer_id>`
 
