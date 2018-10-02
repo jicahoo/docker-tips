@@ -51,6 +51,9 @@ describe employee_history;
 
 # docker network <a name="docker-network"></a>
 * By default, the docker containers are connected to the same switch. You can check the ip address use command like 'ifconifg' or 'ip addr' and ping each other. The local IP address is with prefix 172.
+* Virtulize ethernet adapter, separate ip route mechanism, Linux Bridge.
+* https://platform9.com/blog/container-namespaces-deep-dive-container-networking/
+* ![DockerNetwork](https://platform9.com/wp-content/uploads/2017/01/container_namespaces.png)
 
 # Docker process mapping
 * On MAC, after login LinuxKit
