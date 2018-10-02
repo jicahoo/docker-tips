@@ -4,6 +4,11 @@
 3. [Linux Namespace](#linux-namespace)
 5. [Skills I learned](#new-skills)
     1. [pstree tool](#pstree-tool)
+6. [FAQ](#faq)
+
+# FAQ <a name="faq"/>
+* How to enter a Docker?
+* How to get docker pid?
 
 # tips
 * use mysql 5.7
