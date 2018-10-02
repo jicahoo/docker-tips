@@ -1,8 +1,6 @@
 # Table of contents
 1. [Docker Network](#docker-network)
 2. [Docker Storage](#docker-storage)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 5. [Skills I learned](#new-skills)
     1. [pstree tool](#pstree-tool)
