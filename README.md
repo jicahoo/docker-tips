@@ -59,6 +59,7 @@ describe employee_history;
 
 ## Network tools
 * Check Linux bridges:
+
 ```shell
 jack@jack-virtual-machine:~$ brctl show
 bridge name	bridge id		STP enabled	interfaces
@@ -66,9 +67,11 @@ docker0		8000.0242b42c694e	no		veth68c6a5d
 							vethd28f675
 
 ```
+
 * Check veth pair:
 	* https://stackoverflow.com/questions/21724225/docker-how-to-get-veth-bridge-interface-pair-easily
-	```bash
+	
+```bash
 function veth_interface_for_container() {
   # Get the process ID for the container named ${1}:
   local pid=$(docker inspect -f '{{.State.Pid}}' "${1}")
@@ -89,7 +92,8 @@ function veth_interface_for_container() {
   # Clean up the netns symlink, since we don't need it anymore
   rm -f "/var/run/netns/${1}"
 }
-	```
+```
+
 	* `ethtool -S <interface>`
 
 # Docker process mapping
