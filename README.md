@@ -5,7 +5,7 @@
     1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 5. [Skills I learned](#new-skills)
-    1. [pstree tool](#pstree-tools)
+    1. [pstree tool](#pstree-tool)
 
 # tips
 * use mysql 5.7
