@@ -1,7 +1,7 @@
 # Table of contents
 1. [Docker Network](#docker-network)
 2. [Docker Storage](#docker-storage)
-3. [Another paragraph](#paragraph2)
+3. [Linux Namespace](#linux-namespace)
 5. [Skills I learned](#new-skills)
     1. [pstree tool](#pstree-tool)
 
@@ -85,6 +85,8 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 # Docker storage <a name="docker-storage"/>
 
 # Docker CPU/Memory/Storage resource isolation
+
+# Linux Namespace <a name="linux-namespace"/>
 
 # Skills I learned <a name="new-skills"/>
 ## Check process <a name="pstree-tool"/>
