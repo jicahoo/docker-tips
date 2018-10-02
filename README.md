@@ -78,3 +78,7 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 # Docker storage mapping
 
 # Docker CPU/Memory/Storage resource isolation
+
+# skills I learned
+## Check process 
+* `pstree -spa <pid>` Get the pid's ancestors.
