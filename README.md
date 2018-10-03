@@ -143,6 +143,9 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 * https://thenewstack.io/3-reasons-container-storage-interface-big-deal/
 * https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
 * https://github.com/container-storage-interface/spec
+* Similar projects:
+    * https://thecodeteam.com/projects/docker-volume-vmax/
+    * https://thecodeteam.com/projects/gocsi/
 
 # Docker CPU/Memory/Storage resource isolation
 
