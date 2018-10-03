@@ -134,6 +134,8 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
     *  `cat /proc/2488/status|grep NS` . On Host, you can get the pid mapping between container pid and host pid.
 
 # Docker storage <a name="docker-storage"/>
+* 典型容器存储项目揭密：Flocker，Portworx和VSAN: http://chuansong.me/n/903169052258
+* 容器应用千变万化，存储架构不离其宗: http://chuansong.me/n/484843052451
 
 # Docker CPU/Memory/Storage resource isolation
 
