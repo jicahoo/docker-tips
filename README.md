@@ -146,6 +146,8 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 * Similar projects:
     * https://thecodeteam.com/projects/docker-volume-vmax/
     * https://thecodeteam.com/projects/gocsi/
+    * https://thecodeteam.com/projects/csi-scaleio/
+    * https://thecodeteam.com/all-projects/?fwp_per_page=90
 
 # Docker CPU/Memory/Storage resource isolation
 
