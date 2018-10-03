@@ -138,6 +138,12 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 * 容器应用千变万化，存储架构不离其宗: http://chuansong.me/n/484843052451
 * Dell EMC slides: https://www.snia.org/sites/default/files/SDCIndia/2018/Slides/4%20-%20Dell%20EMC%20-%20Persistent%20storage%20for%20Containers.pdf
 
+## CSI
+* CSI: https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/
+* https://thenewstack.io/3-reasons-container-storage-interface-big-deal/
+* https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
+* https://github.com/container-storage-interface/spec
+
 # Docker CPU/Memory/Storage resource isolation
 
 # Linux Namespace <a name="linux-namespace"/>
