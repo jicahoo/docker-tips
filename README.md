@@ -169,6 +169,11 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 * Get detailed info of POD: `kubectl describe pod source-ip-app-8687dbf9f-r9gxx`
 * Check the network namespace via a hack way: https://thenewstack.io/hackers-guide-kubernetes-networking/
 
+## CSI
+
+* https://kubernetes-csi.github.io/docs/Example.html
+* http://www.itdks.com/dakashuo/13698/material/2644/download OpenSDS Huawei CSI
+
 ## Deploy a nginx to k8s
 * `kubectl create deployment nginx --image=nginx`
 * `kubectl describe deployment nginx`
