@@ -156,7 +156,9 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 
 # Kubernetes Setup
 * http://www.openwriteup.com/setting-up-kubernetes-cluster-in-vmware-workstation-vm/
-
+* https://blogs.vmware.com/cloudnative/2017/10/25/kubernetes-introduction-vmware-users/
+* https://blog.inkubate.io/install-and-manage-automatically-a-kubernetes-cluster-on-vmware-vsphere-with-terraform-and-kubespray/
+* http://www.joseluisgomez.com/containers/kubernetes-deployment/
 # Skills I learned <a name="new-skills"/>
 ## Check process <a name="pstree-tool"/>
 * `pstree -spa <pid>` Get the pid's ancestors.
