@@ -167,6 +167,18 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-nodes-and-cluster
 * https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/
 
+## Deploy a nginx to k8s
+* `kubectl create deployment nginx --image=nginx`
+* `kubectl describe deployment nginx`
+* `kubectl create service nodeport nginx --tcp=80:80`
+* `kubectl get svc`
+```bash
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP   10.100.0.1     <none>        443/TCP        2h
+nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
+```
+* Access from non-master node: http://master-ip:32177. You will see nginx.
+
 
 
 # Skills I learned <a name="new-skills"/>
