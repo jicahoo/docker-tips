@@ -154,6 +154,9 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 # Linux Namespace <a name="linux-namespace"/>
 * `nsenter -t <pid> -n ip addr` . Enter the network namespace of process with pid.
 
+# Kubernetes Setup
+* http://www.openwriteup.com/setting-up-kubernetes-cluster-in-vmware-workstation-vm/
+
 # Skills I learned <a name="new-skills"/>
 ## Check process <a name="pstree-tool"/>
 * `pstree -spa <pid>` Get the pid's ancestors.
