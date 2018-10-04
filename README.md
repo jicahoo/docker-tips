@@ -166,6 +166,8 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 ## Kubernetes usage
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-nodes-and-cluster
 * https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/
+* Get detailed info of POD: `kubectl describe pod source-ip-app-8687dbf9f-r9gxx`
+* Check the network namespace via a hack way: https://thenewstack.io/hackers-guide-kubernetes-networking/
 
 ## Deploy a nginx to k8s
 * `kubectl create deployment nginx --image=nginx`
