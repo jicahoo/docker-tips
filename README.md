@@ -200,3 +200,6 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 
 ## Network namespace not visible
 * https://stackoverflow.com/questions/31265993/docker-networking-namespace-not-visible-in-ip-netns-list
+
+## Reproduce Travis build issue
+* https://stackoverflow.com/questions/29753560/how-to-reproduce-a-travis-ci-build-environment-for-debugging
