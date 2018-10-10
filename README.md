@@ -16,6 +16,7 @@
 * use mysql 5.7
 
 # docker-tips
+## General
 
 ```
 docker build -t imag_name .
@@ -24,6 +25,10 @@ docker run -dit  python    # Docker will exit when main process ends. https://st
 docker exec -ti container_name /bin/bash
 sudo docker run -dti -p 80:8000 abc  #80 is host port, 8000 is container port
 ```
+
+## Tools for data exchange between containers and host.
+* `docker cp <containerId>:/file/path/within/container /host/path/target`
+
 
 # docker
 * https://hub.docker.com/r/wnameless/oracle-xe-11g/   (16.04)
