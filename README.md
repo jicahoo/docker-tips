@@ -208,3 +208,9 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 
 ## Reproduce Travis build issue
 * https://stackoverflow.com/questions/29753560/how-to-reproduce-a-travis-ci-build-environment-for-debugging
+
+## gRPC and protocol buffer.
+* `docker pull grpc/go` But you have to remove src/.../grpc and re-get grpc,  or there will be error 'not a valid version control system'
+* Check README.md under: /google.golang.org/grpc/examples/README.md
+* https://grpc.io/docs/quickstart/go.html#try-it
+* go get: http://c.biancheng.net/view/123.html
