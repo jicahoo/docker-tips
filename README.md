@@ -196,6 +196,8 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * Access from non-master node: http://master-ip:32177. You will see nginx.
 
 
+# Go language
+* Package dependency management: https://medium.freecodecamp.org/an-intro-to-dep-how-to-manage-your-golang-project-dependencies-7b07d84e7ba5
 
 # Skills I learned <a name="new-skills"/>
 ## Check process <a name="pstree-tool"/>
