@@ -1,23 +1,55 @@
 # Table of contents
-1. [Docker Network](#docker-network)
-2. [Docker Storage](#docker-storage)
-3. [Linux Namespace](#linux-namespace)
-5. [Skills I learned](#new-skills)
-    1. [pstree tool](#pstree-tool)
-6. [FAQ](#faq)
+1. [Quick Reference](#quick-reference)
+2. [FAQ](#faq)
+3. [Docker](#docker)
+    1. [Docker Installation](#docker-install)
+    2. [Docker Usage](#docker-usage)
+    3. [Docker Usage](#docker-build)
+    4. [Dcoker on Mac](#docker-mac)
+    5. [Dcoker internal mechanism](#docker-mechanism)
+    6. [Docker Network](#docker-network)
+    7. [Docker Network](#docker-network-tools)
+    8. [Docker process mapping](#docker-pid-mapping)
+    9. [Docker Storage](#docker-storage)
+4. [Kubernetes](#k8s)
+    1. [kubernetes setup](#k8s-setup)
+    2. [Kubernetes Usage](#k8s-usage)
+    3. [K8s deploy app](#k8s-deploy-app)
+5. [CSI](#csi)
+    1. [CSI references](#csi-refs)
+    2. [CSI related projects](#csi-related-projs))
+    3. [CSI in k8s](#csi-in-k8s)
+    4. [CSI supported in other COs](#csi-cos)
+6. [Golang](#golang)
 
-# FAQ <a name="faq"/>
+# docker-tips
+
+## Quick Reference: <a name="quick-reference"/>
+* Docker: https://www.cnblogs.com/SzeCheng/p/6822905.html (Chinese)
+* Kubernetes in 10 minutes: http://www.dockone.io/article/932 (chinese), http://omerio.com/2015/12/18/learn-the-kubernetes-key-concepts-in-10-minutes/ (English) 
+
+## FAQ <a name="faq"/>
 * How to enter a Docker?
     * `sudo nsenter --target <docker_pid> --mount --uts --ipc --net --pid`
 * How to get docker pid? `sudo docker inspect -f {{.State.Pid}} <docker_id>`
 * How to get detailed info of docker? `docker inspect <dokcer_id>`
 
-# tips
-* use mysql 5.7
+## Docker <a name="docker"/>
 
-# docker-tips
-## General
+### Install docker on Ubuntu <a name="docker-install"/>
+* wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce\_18.06.1~ce~3-0~ubuntu\_amd64.deb
+* sudo dpkg -i /path/to/package.deb
+* sudo docker run hello-world
 
+### Docker Usage <a name="docker-usage"/>
+* Start a docker container: `docker run -ti <image_name> /bin/bash`
+* Copy docker file to Host: `docker cp <containerId>:/file/path/within/container /host/path/target`
+
+### Build your own docker with Dockerfile <a name="docker-build"/>
+* https://www.cnblogs.com/Bourbon-tian/p/6867796.html
+* `docker build -t <image_name> .` In current dir, there must be a Dockerfile.
+
+### docker commands example
 ```
 docker build -t imag_name .
 docker run -i -t imag_name  /bin/bash
@@ -26,35 +58,16 @@ docker exec -ti container_name /bin/bash
 sudo docker run -dti -p 80:8000 abc  #80 is host port, 8000 is container port
 ```
 
-## Tools for data exchange between containers and host.
-* `docker cp <containerId>:/file/path/within/container /host/path/target`
-
-
-# docker
-* https://hub.docker.com/r/wnameless/oracle-xe-11g/   (16.04)
-* docker pull sflyr/sqlplus
-# Virtualization
-* Virtualize the hardwares: CPU, RAM, Ethernet, Disk/Filesystem?
-# Install docker on Ubuntu
-* wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_18.06.1~ce~3-0~ubuntu_amd64.deb
-* sudo dpkg -i /path/to/package.deb
-* sudo docker run hello-world
-
-# On Mac
+### Docker On Mac <a name="docker-mac"/>
 * Log: https://docs.docker.com/docker-for-mac/troubleshoot/#check-the-logs
 * Login to VM in Hyperkit: https://stackoverflow.com/questions/39739560/how-to-access-the-vm-created-by-dockers-hyperki
 * `screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty` Then you can see the docker daemon
 
-# Oralce
-* Check instance name:
-```sql
-SELECT sys_context('USERENV','DB_NAME') AS Instance FROM dual;
-select sys_context( 'userenv', 'current_schema' ) from dual;
-describe employee_history;
-```
-* SQLPlus: `/sqlplus system/oracle@172.17.02:1521/XE
+### Docker internal mechanism <a name="docker-mechanism"/>
+* Virtualize the hardwares: CPU, RAM, Ethernet, Disk/Filesystem?
+* http://dockone.io/article/2941
 
-# docker network <a name="docker-network"></a>
+### Docker network <a name="docker-network"></a>
 * https://tonybai.com/2017/01/11/understanding-linux-network-namespace-for-docker-network/
 * https://github.com/docker/libnetwork/blob/master/docs/design.md
 * By default, the docker containers are connected to the same switch. You can check the ip address use command like 'ifconifg' or 'ip addr' and ping each other. The local IP address is with prefix 172.
@@ -62,7 +75,7 @@ describe employee_history;
 * https://platform9.com/blog/container-namespaces-deep-dive-container-networking/
 * ![DockerNetwork](https://platform9.com/wp-content/uploads/2017/01/container_namespaces.png)
 
-## Network tools
+### Network tools <a name="docker-network-tools"/>
 * Check Linux bridges:
 
 ```shell
@@ -100,7 +113,9 @@ function veth_interface_for_container() {
 ```
 	* `ethtool -S <interface>`
 
-# Docker process mapping
+* `nsenter -t <pid> -n ip addr` . Enter the network namespace of process with pid.
+
+### Docker process mapping <a name="docker-pid-mapping"/>
 * On MAC, after login LinuxKit
 * Got below processes structure. I started sleep in a container. The ouput of pstree isn't complete. I have to use serveral times to got my sleep process in my container.
 ```
@@ -138,52 +153,31 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
     * `ls -l /proc/<pid>/ns` In both Host & container, you can check namespace info of a given process.
     *  `cat /proc/2488/status|grep NS` . On Host, you can get the pid mapping between container pid and host pid.
 
-# Docker storage <a name="docker-storage"/>
+### Docker storage <a name="docker-storage"/>
 * 典型容器存储项目揭密：Flocker，Portworx和VSAN: http://chuansong.me/n/903169052258
 * 容器应用千变万化，存储架构不离其宗: http://chuansong.me/n/484843052451
 * Dell EMC slides: https://www.snia.org/sites/default/files/SDCIndia/2018/Slides/4%20-%20Dell%20EMC%20-%20Persistent%20storage%20for%20Containers.pdf
 
-## CSI
-* CSI: https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/
-* https://thenewstack.io/3-reasons-container-storage-interface-big-deal/
-* https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
-* https://github.com/container-storage-interface/spec
-* Similar projects:
-    * https://thecodeteam.com/projects/docker-volume-vmax/
-    * https://thecodeteam.com/projects/gocsi/
-    * https://thecodeteam.com/projects/csi-scaleio/
-    * https://thecodeteam.com/all-projects/?fwp_per_page=90
-    * https://github.com/djannot/scaleio-docker
-    * https://github.com/thecodeteam/goscaleio
-# Docker CPU/Memory/Storage resource isolation
 
-# Linux Namespace <a name="linux-namespace"/>
-* `nsenter -t <pid> -n ip addr` . Enter the network namespace of process with pid.
+## Kubernetes <a name="k8s"/>
 
-# Kubernetes
-
-## Kubernetes setup
+### Kubernetes setup <a name="k8s-setup"/>
 * Successfully setup: https://github.com/pires/kubernetes-vagrant-coreos-cluster
 * http://www.openwriteup.com/setting-up-kubernetes-cluster-in-vmware-workstation-vm/
 * https://blogs.vmware.com/cloudnative/2017/10/25/kubernetes-introduction-vmware-users/
 * https://blog.inkubate.io/install-and-manage-automatically-a-kubernetes-cluster-on-vmware-vsphere-with-terraform-and-kubespray/
 * http://www.joseluisgomez.com/containers/kubernetes-deployment/
 
-## Kubernetes usage
+### Kubernetes usage <a name="k8s-usage"/>
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-nodes-and-cluster
 * https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/
 * Get detailed info of POD: `kubectl describe pod source-ip-app-8687dbf9f-r9gxx`
 * Check the network namespace via a hack way: https://thenewstack.io/hackers-guide-kubernetes-networking/
 
-## Kubernetes distrituions
+### Kubernetes distrituions <a name="k8s-dists">
 * https://dzone.com/articles/kubernetes-distributions-how-do-i-choose-one
 
-## CSI
-
-* https://kubernetes-csi.github.io/docs/Example.html
-* http://www.itdks.com/dakashuo/13698/material/2644/download OpenSDS Huawei CSI
-
-## Deploy a nginx to k8s
+### Deploy a nginx to k8s <a name="k8s-deploy-app"/>
 * `kubectl create deployment nginx --image=nginx`
 * `kubectl describe deployment nginx`
 * `kubectl create service nodeport nginx --tcp=80:80`
@@ -196,7 +190,34 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * Access from non-master node: http://master-ip:32177. You will see nginx.
 
 
-# Go language
+## CSI <a name="csi"/>
+### References <a name="csi-refs"/>
+* https://github.com/container-storage-interface/spec
+* CSI: https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/
+* https://thenewstack.io/3-reasons-container-storage-interface-big-deal/
+* http://www.itdks.com/dakashuo/13698/material/2644/download OpenSDS Huawei CSI
+
+### CSI related project <a name="csi-related-projs"/>
+* https://thecodeteam.com/projects/docker-volume-vmax/
+* https://thecodeteam.com/projects/gocsi/
+* https://thecodeteam.com/projects/csi-scaleio/
+* https://thecodeteam.com/all-projects/?fwp_per_page=90
+* https://github.com/djannot/scaleio-docker
+* https://github.com/thecodeteam/goscaleio
+
+
+### k8s csi support <a name="csi-in-k8s"/>
+* k8s csi: https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
+* https://kubernetes-csi.github.io/
+* https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
+* https://kubernetes-csi.github.io/docs/Example.html
+* https://blog.csdn.net/hxpjava1/article/details/79323187
+
+### Other Container Orchestrator which supports CSI <a name="csi-cos"/>
+* Apache Mesos: http://mesos.apache.org/documentation/latest/csi/
+
+## Go language <a name="golang"/>
+* One pain point in Go is dependency management.
 * Package dependency management: https://medium.freecodecamp.org/an-intro-to-dep-how-to-manage-your-golang-project-dependencies-7b07d84e7ba5
 
 # Skills I learned <a name="new-skills"/>
@@ -218,3 +239,15 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * https://grpc.io/docs/quickstart/go.html#try-it
 * go get: http://c.biancheng.net/view/123.html
 
+## Oralce
+* Check instance name:
+```sql
+SELECT sys_context('USERENV','DB_NAME') AS Instance FROM dual;
+select sys_context( 'userenv', 'current_schema' ) from dual;
+describe employee_history;
+```
+* SQLPlus: `/sqlplus system/oracle@172.17.02:1521/XE
+
+### Leverage docker to use Oracle database
+* https://hub.docker.com/r/wnameless/oracle-xe-11g/   (16.04)
+* docker pull sflyr/sqlplus
