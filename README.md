@@ -4,7 +4,7 @@
 3. [Docker](#docker)
     1. [Docker Installation](#docker-install)
     2. [Docker Usage](#docker-usage)
-    3. [Docker Usage](#docker-build)
+    3. [Build your docker image](#docker-build)
     4. [Dcoker on Mac](#docker-mac)
     5. [Dcoker internal mechanism](#docker-mechanism)
     6. [Docker Network](#docker-network)
