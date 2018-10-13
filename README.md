@@ -219,6 +219,9 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 ## Go language <a name="golang"/>
 * One pain point in Go is dependency management.
 * Package dependency management: https://medium.freecodecamp.org/an-intro-to-dep-how-to-manage-your-golang-project-dependencies-7b07d84e7ba5
+* Golang build, install: TODO
+* golang syntax: https://devhints.io/go
+* https://golang.org/doc/faq#methods_on_values_or_pointers
 
 # Skills I learned <a name="new-skills"/>
 ## Check process <a name="pstree-tool"/>
