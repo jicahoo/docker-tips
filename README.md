@@ -213,6 +213,13 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * https://kubernetes-csi.github.io/docs/Example.html
 * https://blog.csdn.net/hxpjava1/article/details/79323187
 
+## Others
+* https://kubernetes-csi.github.io/docs/Example.html
+* https://kubernetes.io/docs/concepts/
+* https://www.katacoda.com/
+* https://app.pluralsight.com/paths/skills/managing-containers-with-docker
+* https://app.pluralsight.com/library/courses/getting-started-kubernetes
+
 ### Other Container Orchestrator which supports CSI <a name="csi-cos"/>
 * Apache Mesos: http://mesos.apache.org/documentation/latest/csi/
 
