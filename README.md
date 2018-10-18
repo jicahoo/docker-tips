@@ -209,6 +209,9 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * https://github.com/djannot/scaleio-docker
 * https://github.com/thecodeteam/goscaleio
 
+### k8s csi usage and setup
+* https://blog.thecodeteam.com/2017/12/19/use-kubernetes-1-9-0-csi/
+
 
 ### k8s csi support <a name="csi-in-k8s"/>
 * k8s csi: https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
