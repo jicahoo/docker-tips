@@ -15,6 +15,7 @@
     1. [kubernetes setup](#k8s-setup)
     2. [Kubernetes Usage](#k8s-usage)
     3. [K8s deploy app](#k8s-deploy-app)
+    4. [kubectl](#kubectl)
 5. [CSI](#csi)
     1. [CSI references](#csi-refs)
     2. [CSI related projects](#csi-related-projs))
@@ -174,8 +175,11 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 * Get detailed info of POD: `kubectl describe pod source-ip-app-8687dbf9f-r9gxx`
 * Check the network namespace via a hack way: https://thenewstack.io/hackers-guide-kubernetes-networking/
 
-### Kubernetes distrituions <a name="k8s-dists">
+### Kubernetes distrituions <a name="k8s-dists"/>
 * https://dzone.com/articles/kubernetes-distributions-how-do-i-choose-one
+
+### kuberctl <a name="kubectl"/>
+* `kubectl cluster-info`
 
 ### Deploy a nginx to k8s <a name="k8s-deploy-app"/>
 * `kubectl create deployment nginx --image=nginx`
