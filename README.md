@@ -222,8 +222,16 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 		* Add support for CSI spec v0.3.0 for both Cinder and Manilla
 		* The CSI volume plugin no longer needs an external attacher for non-attachable CSI volumes. 
 		* SIG Storage also worked on a number of Container Storage Interface (CSI) features this quarter in anticipation of moving support for CSI from beta to GA in the next Kubernetes release.
-	
 	* 1.12: Still not GA: https://www.mirantis.com/blog/whats-new-in-kubernetes-1-12-28-things-to-look-for/
+	* 1.12 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.12.md
+		* Add support for volume attach limits for CSI volumes
+		* CSI volume plugin does not need external attacher for non-attachable CSI volumes. 
+		* Add CSI volume attributes for kubectl describe pv.
+		* Fixed CSIDriver API object to allow missing fields. 
+		* Introduce CSI Cluster Registration mechanism to ease CSI plugin discovery and allow CSI drivers to customize Kubernetes' interaction with them. 
+		* Kubernetes juju charms will now use CSI for ceph. 
+		* Kubernetes now registers volume topology information reported by a node-level Container Storage Interface (CSI) driver. This enables Kubernetes support of CSI topology mechanisms. 
+	
 * k8s csi: https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
 * https://kubernetes-csi.github.io/
 * https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
