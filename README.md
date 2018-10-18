@@ -218,6 +218,7 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 	* 1.9: alpha https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
 	* 1.10: beta https://kubernetes.io/blog/2018/04/10/container-storage-interface-beta/
 	* 1.11: https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#111-release-notes
+		* CSI is updated to 0.3.0 as compared to 0.2.0 in v1.10.
 		* Provides API support for external CSI storage drivers to support block volumes. 
 		* Fixed CSIDriver API object to allow missing fields. 
 		* Add support for CSI spec v0.3.0 for both Cinder and Manilla
