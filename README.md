@@ -214,6 +214,10 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 
 
 ### k8s csi support <a name="csi-in-k8s"/>
+* k8s csi support status:
+	* 1.9: alpha https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
+	* 1.10: beta https://kubernetes.io/blog/2018/04/10/container-storage-interface-beta/
+	* 1.12: Still not GA: https://www.mirantis.com/blog/whats-new-in-kubernetes-1-12-28-things-to-look-for/
 * k8s csi: https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
 * https://kubernetes-csi.github.io/
 * https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
