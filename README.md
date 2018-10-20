@@ -239,6 +239,7 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
 * https://kubernetes-csi.github.io/docs/Example.html
 * https://blog.csdn.net/hxpjava1/article/details/79323187
+* https://kubernetes.io/docs/concepts/storage/volumes/#out-of-tree-volume-plugins **Official Doc**
 
 ## Others
 * https://kubernetes-csi.github.io/docs/Example.html
