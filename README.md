@@ -245,6 +245,8 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * https://kubernetes.io/docs/concepts/storage/volumes/#out-of-tree-volume-plugins **Official Doc**
 * Recommended deploy: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface.md#recommended-mechanism-for-deploying-csi-drivers-on-kubernetes
 * Hostpath csi dirver:https://github.com/kubernetes-csi/drivers/tree/master/pkg/hostpath
+* scale io csi: https://blog.thecodeteam.com/2017/12/19/use-kubernetes-1-9-0-csi/
+* scale io: https://github.com/thecodeteam/vagrant/tree/master/kubernetes/scripts/examples/csi-scaleio
 
 ## Others
 * https://kubernetes-csi.github.io/docs/Example.html
