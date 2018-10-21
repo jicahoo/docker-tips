@@ -178,6 +178,9 @@ docker-containe(1351)---docker-containe(2315)---bash(2339)---sleep(2469)
 ### Kubernetes distrituions <a name="k8s-dists"/>
 * https://dzone.com/articles/kubernetes-distributions-how-do-i-choose-one
 
+### k8s online learning
+* https://www.katacoda.com/courses/kubernetes/
+
 ### kuberctl <a name="kubectl"/>
 * `kubectl cluster-info`
 
