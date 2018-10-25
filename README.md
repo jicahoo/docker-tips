@@ -259,6 +259,7 @@ nginx        NodePort    10.100.52.54   <none>        80:32177/TCP   47m
 * Apache Mesos: http://mesos.apache.org/documentation/latest/csi/
 
 ## Go language <a name="golang"/>
+* Install go on linux: https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79
 * One pain point in Go is dependency management.
 * Package dependency management: https://medium.freecodecamp.org/an-intro-to-dep-how-to-manage-your-golang-project-dependencies-7b07d84e7ba5
 * Golang build, install: TODO
